@@ -1,6 +1,7 @@
-package Lvl1_Ex1;
+package Level_01.Lvl1_Ex1;
 
-import Lvl1_Ex1.classes.BookManager;
+import Level_01.Lvl1_Ex1.classes.BookManager;
+import Level_01.Lvl1_Ex1.classes.BookMenu;
 
 /*Crea una classe Java que gestioni una col·lecció de llibres en una biblioteca.
 La classe ha de permetre afegir llibres, recuperar la llista de llibres, obtenir un llibre específic per la seva posició,
@@ -27,7 +28,7 @@ Verifica el seu correcte funcionament amb JUnit:
 */
 public class Lvl1_Ex01_Main {
 	public static void main(String[] args) {
-		BookManager bookmanager = new BookManager();
-		bookmanager.start();
+		BookMenu menu = new BookMenu();
+		menu.start();
 	}
 }

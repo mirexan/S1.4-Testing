@@ -1,6 +1,6 @@
-package Lvl1_Ex1.classes;
+package Level_01.Lvl1_Ex1.classes;
 
-public class Book {
+public class Book implements Comparable<Book>{
 	private String name;
 
 	public Book(String name){
@@ -9,5 +9,10 @@ public class Book {
 
 	public String getName(){
 		return this.name;
+	}
+
+	@Override
+	public int compareTo(Book newBook) {
+		return this.name.compareTo(newBook.getName());
 	}
 }

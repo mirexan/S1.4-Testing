@@ -1,69 +1,76 @@
-package Lvl1_Ex1.classes;
+package Level_01.Lvl1_Ex1.classes;
 
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
 public class BookManager {
-	public void start(){
-	Scanner sc = new Scanner(System.in);
-	DisplayMenu(sc);
-	sc.close();
-	}
+	private ArrayList<Book> library = new ArrayList<Book>();
 
-	public void DisplayMenu(Scanner sc){
-		ArrayList<Book> library = new ArrayList<Book>();
-		int option = -1;
+	public String deleteBook(String title){
 		String answer = "";
-		while (option != 0){
-			System.out.println("\n *** Welcome to Library Management Menu ***\n\n" +
-					"Please select an option typing it's number\n" +
-					"1. Add a book to the collection.\n" +
-					"2. Display the entire list of books.\n" +
-					"3. Get the title of a book by it's position.\n" +
-					"4. Add a book in a specific position.\n" +
-					"5. Elimante a book by title.\n" +
-					"0. Leave this menu ");
-			option = sc.nextInt();
-			sc.nextLine();
-			switch (option){
-				case 1:
-					answer = addBook(library,sc);
-					break;
-				case 2:
-					break;
-				case 3:
-					break;
-				case 4:
-					break;
-				case 5:
-					break;
-				case 0:
-					answer = "Leaving the menu";
-					break;
-				default:
-					answer = "Invalid option";
-					break;
+		Iterator<Book> it = library.iterator();
+		while (it.hasNext() && answer.isEmpty()){
+			Book book = it.next();
+			if (book.getName().equalsIgnoreCase(title)){
+				library.remove(book);
+				answer = title + " has been removed from list";
 			}
-			System.out.println(answer);
 		}
+		if (answer.isEmpty()){
+			answer = "There is no book titled "+ title + " in the library";
+		}
+		return answer;
 	}
 
-	public String addBook(ArrayList<Book> library, Scanner sc){
+	public String addBookInPosition(String title,int pos){
 		String answer = "";
-		String title = "";
-		System.out.println("Please type the title of the book to add");
-		title = sc.nextLine();
-		if (dupBook(title,library)) {
-			answer = "This book it's already in the library.";
+		if (pos < 0 || pos > library.size()){
+			answer = "Invalid position";
+		}
+		else{
+			library.add(pos,new Book (title));
+			Collections.sort(library);
+			answer = "The book " + title + " has been added at position " + pos + " but,\n" +
+					"the collection has been sorted by alphabetical order.";
+		}
+		return (answer);
+	}
+
+	public String listBooks(){
+		String answer = "";
+		for (int i = 0; i < library.size() ;i++) {
+			answer += i + ". " + library.get(i).getName() + "\n";
+		}
+		return answer;
+	}
+
+	public ArrayList<Book> getLibrary(){
+		return library;
+	}
+
+	public String getBookByPosition(int pos){
+		String answer = "";
+		if (pos < 0 || pos > library.size()){
+			answer = "Invalid position";
+		}
+		else{
+			answer = library.get(pos).getName();
+		}
+		return  answer;
+	}
+	public String addBook(String title){
+		String answer = "";
+		if (dupBook(title)) {
+			answer = "This book is already in the library.";
 		}
 		else{
 			library.add(new Book(title));
+			Collections.sort(library);
 			answer = title + " has been added to the collection";
 		}
 		return answer;
 	}
 
-	public boolean dupBook(String title, ArrayList<Book> library){
+	public boolean dupBook(String title){
 		boolean isDup = false;
 		for (Book book:library){
 			if (book.getName().equalsIgnoreCase(title))

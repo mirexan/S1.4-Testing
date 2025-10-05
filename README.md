@@ -6,9 +6,12 @@
 
 ### **Level 01 : JUnit**
 
-**Exercise 01**
+**Exercise 01 Subject**
 
-    Crea una classe Java que gestioni una col·lecció de llibres en una biblioteca. La classe ha de permetre afegir llibres, recuperar la llista de llibres, obtenir un llibre específic per la seva posició, afegir un llibre en una posició específica i eliminar un llibre per títol.
+    Crea una classe Java que gestioni una col·lecció de llibres en una biblioteca.
+	La classe ha de permetre afegir llibres, recuperar la llista de llibres, 
+	obtenir un llibre específic per la seva posició, afegir un llibre en una posició 
+	específica i eliminar un llibre per títol.
 
 Implementa les següents funcionalitats:
 
@@ -28,7 +31,11 @@ Verifica el seu correcte funcionament amb JUnit:
     Asseguren que afegir un llibre modifica correctament la llista.
     Confirmen que eliminar un llibre disminueix la mida de la llista.
     Verifiquen que la llista roman ordenada alfabèticament després d'afegir o eliminar un llibre.
+**Exercise 01 - Observations**
 
+The subject of this exercise asks to alphabetically sort books by title, but in the same
+time it asks to add books at a certain position. I've decided to sort books in any case
+of addition. So tests will also always check sorted results.
 
 **Exercise 02**
 
