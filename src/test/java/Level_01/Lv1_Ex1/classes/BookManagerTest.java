@@ -1,7 +1,7 @@
 package Level_01.Lv1_Ex1.classes;
 
-import Level_01.Lvl1_Ex1.classes.Book;
-import Level_01.Lvl1_Ex1.classes.BookManager;
+import Level_01.lvl1_Ex1.classes.Book;
+import Level_01.lvl1_Ex1.classes.BookManager;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -12,16 +12,6 @@ import java.util.TreeSet;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-/*Verifica el seu correcte funcionament amb JUnit:
-
-    Verifiquen que la llista de llibres no és nul·la després de crear un nou objecte.
-    Confirmen que la llista té una mida esperada després d'inserir diversos llibres.
-    Asseguren que la llista conté un llibre específic en la seva posició correcta.
-    Verifiquen que no hi ha títols de llibres duplicats a la llista.
-    Comproven que es pot recuperar el títol d'un llibre donada una posició específica.
-    Asseguren que afegir un llibre modifica correctament la llista.
-    Confirmen que eliminar un llibre disminueix la mida de la llista.
-    Verifiquen que la llista roman ordenada alfabèticament després d'afegir o eliminar un llibre.*/
 
 public class BookManagerTest {
 

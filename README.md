@@ -3,34 +3,36 @@
 ## 📄 **Description**
 
 
-
 ### **Level 01 : JUnit**
 
 **Exercise 01 Subject**
 
-    Crea una classe Java que gestioni una col·lecció de llibres en una biblioteca.
-	La classe ha de permetre afegir llibres, recuperar la llista de llibres, 
-	obtenir un llibre específic per la seva posició, afegir un llibre en una posició 
-	específica i eliminar un llibre per títol.
+    Create a Java class to manage a collection of books in a library.
+    The class should allow adding books, retrieving the list of books,
+    getting a specific book by its position, adding a book at a specific
+    position, and removing a book by title.
 
-Implementa les següents funcionalitats:
+    Implement the following functionalities:
 
-    La classe ha de permetre afegir llibres a la col·lecció.
-    S'ha de poder recuperar la llista completa de llibres
-    S'ha de poder obtenir el títol d'un llibre donada una posició.
-    S'ha de poder afegir un llibre en una posició específica.
-    S'ha de poder eliminar un llibre per títol.
+        The class should allow adding books to the collection.
+        It should be possible to retrieve the complete list of books.
+        It should be possible to get the title of a book given its position.
+        It should be possible to add a book at a specific position.
+        It should be possible to remove a book by title.
 
-Verifica el seu correcte funcionament amb JUnit:
 
-    Verifiquen que la llista de llibres no és nul·la després de crear un nou objecte.
-    Confirmen que la llista té una mida esperada després d'inserir diversos llibres.
-    Asseguren que la llista conté un llibre específic en la seva posició correcta.
-    Verifiquen que no hi ha títols de llibres duplicats a la llista.
-    Comproven que es pot recuperar el títol d'un llibre donada una posició específica.
-    Asseguren que afegir un llibre modifica correctament la llista.
-    Confirmen que eliminar un llibre disminueix la mida de la llista.
-    Verifiquen que la llista roman ordenada alfabèticament després d'afegir o eliminar un llibre.
+    Verify its correct operation with JUnit:
+    
+        Verify that the list of books is not null after creating a new object.
+        Confirm that the list has the expected size after inserting several books.
+        Ensure that the list contains a specific book in its correct position.
+        Verify that there are no duplicate book titles in the list.
+        Check that it is possible to retrieve the title of a book given a specific position.
+        Ensure that adding a book correctly modifies the list.
+        Confirm that removing a book decreases the size of the list.
+        Verify that the list remains sorted alphabetically after adding or removing a book.
+
+
 **Exercise 01 - Observations**
 
 The subject of this exercise asks to alphabetically sort books by title, but in the same
@@ -40,76 +42,58 @@ of addition. So tests will also always check sorted results.
 **Exercise 02**
 
 
-    Crea una classe anomenada CalculoDni que calculi la lletra del DNI en rebre el número com a paràmetre.
-    Crea una classe jUnit que verifiqui el seu correcte funcionament, parametritzant-la perquè el test rebi 
-    un espectre de dades ampli i validi si el càlcul és correcte per a 10 números de DNI predefinits.
+    Create a class called CalculoDni that calculates the letter of the DNI (Spanish ID) when given the number as a 
+    parameter.Create a JUnit class to verify its correct operation, parameterizing it so that the test receives a 
+    wide spectrum of data and validates whether the calculation is correct for 10 predefined DNI numbers.
 
 
 **Exercise 03**
 
 
-    Crea una classe amb un mètode que llanci una ArrayIndexOutOfBoundsException.
-    Verifica el seu correcte funcionament amb un test jUnit.
+    Create a class with a method that throws an ArrayIndexOutOfBoundsException.
+    Verify its correct functioning with a JUnit test.
 
 
 ### **Level 02: AssertJ**
 
-Crea les classes Java i/o els tests que les proven per a demostrar el següent:
+Create Java classes and/or tests that demonstrate the following:
 
 **Exercise 01**
 
-    Una asserció que demostri que el valor de dos objectes sencers és igual, 
-    i una altra que indiqui que no ho és.
+    An assertion that demonstrates that the value of two integer objects is equal,
+    and another that shows that it is not.
 
 **Exercise 02**
 
-    Una asserció que demostri que la referència a un objecte és la mateixa que 
-    una altra, i una altra que indiqui que és diferent.
+    An assertion that demonstrates that the reference to one object is the same as
+    another, and another that shows they are different.
 
 **Exercise 03**
 
-    Una asserció que indiqui que dos arrays d'enters són idèntics.
+    An assertion that shows that two arrays of integers are identical.
 
 **Exercise 04**
 
-Crea un arrayList contenidor de diversos tipus d'objectes (crea'ls també). 
-Escriu una asserció per a verificar l'ordre 
-dels objectes en l'ArrayList segons han estat inserits.
+    Create an ArrayList containing various types of objects (create those objects as well).
+    Write an assertion to verify the order of the objects in the ArrayList as they were inserted.
 
-    Ara verifica que la llista anterior conté els objectes en qualsevol ordre.
-    Verifica que, en la llista anterior, un dels objectes s'ha afegit només una 
-    vegada. Deixa un dels elements sense afegir, i verifica que la llista no conté aquest últim.
+        Now verify that the previous list contains the objects in any order.
+        Check that, in the previous list, one of the objects has been added only once.
+        Leave one of the elements out, and verify that the list does not contain that last one.
 
 **Exercise 05** 
 
-    Crea un map i verifica que conté una de les key que li afegeix.
+    Create a map and verify that it contains one of the keys you added.
 
 **Exercise 06**
 
-    Provoca una ArrayIndexOutOfBoundsException en una classe qualsevol. 
-    Crea una asserció que validi que l'excepció és llançada quan correspon.
+    Cause an ArrayIndexOutOfBoundsException in any class.
+    Write an assertion that validates that the exception is thrown when appropriate
 
 **Exercise 07**
 
-    Crea un objecte Optional buit. Escriu l'asserció correcta per a verificar 
-    que efectivament està buit.
-
-### **Level 03: TDD**
-
-**Exercise 01**
-
-Suposem que volem crear una classe anomenada Calculadora que tingui mètodes per 
-realitzar operacions bàsiques com suma, resta, multiplicació i divisió. 
-Anem a escriure proves abans d'implementar la funcionalitat:
-
-    Crea una classe de prova anomenada CalculadoraTest.
-    Escriu les proves per verificar els mètodes sumar, restar, dividir i multiplicar de la calculadora.
-    Executa les proves. Haurien de fallar, ja que encara no hem implementat els mètodes a la classe Calculadora.
-    Crea una classe Calculadora que contingui els mètodes especificats per les proves.
-    Executa les proves.
-    Itera sobre el procés: Després de cada iteració, continua el procés de TDD, reescriu les proves, refactoritza el 
-    codi si és necessari i repeteix el cicle de desenvolupament per millorar i ampliar la funcionalitat de la classe
-    Calculadora.
+    Create an empty Optional object. Write the correct assertion to verify
+    that it is indeed empty.
 
 
 ## 💻 **Used technologies**
