@@ -1,4 +1,4 @@
-package Level_03.Lvl3_Ex01;
+package Level_02.ex5ToEx7;
 
 public class ObjOutofBounds {
 	public String provokedOutOfBounds() {

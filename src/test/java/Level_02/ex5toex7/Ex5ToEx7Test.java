@@ -1,6 +1,6 @@
 package Level_02.ex5toex7;
 
-import Level_03.Lvl3_Ex01.ObjOutofBounds;
+import Level_02.ex5ToEx7.ObjOutofBounds;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
