@@ -1,16 +1,17 @@
 package Level_02.ex5toex7;
 
-import Level_02.ex5ToEx7.ObjOutofBounds;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import java.util.HashMap;
 import java.util.Optional;
 
-
+@DisplayName("Tests from Exercise 5 to 7")
 public class Ex5ToEx7Test {
 	@Test
-	public void ex05Test(){
+	public void mapVerifyAddedKey(){
 		HashMap<Integer,String> map= new HashMap<Integer, String>();
 		map.put(1,"Sharon");
 		map.put(2,"Chufi");
@@ -18,14 +19,14 @@ public class Ex5ToEx7Test {
 	}
 
 	@Test
-	public void ex06Test(){
+	public void objectThrowsOutOfBoundsException(){
 		ObjOutofBounds obj = new ObjOutofBounds();
-		String answer = obj.provokedOutOfBounds();
-		assertThat(answer).startsWith("Exception catched : ");
+		assertThatThrownBy(()->obj.provokedOutOfBounds());
+
 	}
 
 	@Test
-	public void ex07Test(){
+	public void objectVerifyIsEmpty(){
 		Optional<String> obj = Optional.empty();
 		assertThat(obj).isEmpty();
 	}

@@ -2,6 +2,7 @@ package Level_01.Lv1_Ex1.classes;
 
 import Level_01.lvl1_Ex1.classes.Book;
 import Level_01.lvl1_Ex1.classes.BookManager;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -15,14 +16,19 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class BookManagerTest {
 
+	private BookManager manager;
+
+	@BeforeEach
+	public void setUp(){
+		manager = new BookManager();
+	}
+
 	@Test
 	public void listNotNull() {
-		BookManager manager = new BookManager();
 		assertNotNull(manager.getLibrary());
 	}
 	@Test
 	public void listCorrectSize() {
-		BookManager manager = new BookManager();
 		manager.addBook("Rashomon");
 		manager.addBook("Mistborn I");
 		manager.addBook("The death denial");
@@ -30,7 +36,6 @@ public class BookManagerTest {
 	}
 	@Test
 	public void addBookInPositionTest() {
-		BookManager manager = new BookManager();
 		manager.addBook("Rashomon");
 		manager.addBook("The death denial");
 		manager.addBookInPosition("Mistborn I",1);
@@ -38,7 +43,6 @@ public class BookManagerTest {
 	}
 	@Test
 	public void noDupTest() {
-		BookManager manager = new BookManager();
 		manager.addBook("Rashomon");
 		manager.addBook("Rashomon");
 		manager.addBook("Rashomon");
@@ -46,7 +50,6 @@ public class BookManagerTest {
 	}
 	@Test
 	public void getBookInPositionTest() {
-		BookManager manager = new BookManager();
 		manager.addBook("Rashomon");
 		manager.addBook("Mistborn I");
 		manager.addBook("The death denial");
@@ -55,7 +58,6 @@ public class BookManagerTest {
 	}
 	@Test
 	public void listCorrectAfterAdd() {
-		BookManager manager = new BookManager();
 		manager.addBook("Rashomon");
 		manager.addBook("Mistborn I");
 		manager.addBook("The death denial");
@@ -65,7 +67,6 @@ public class BookManagerTest {
 	}
 	@Test
 	public void listCorrectAfterDelete() {
-		BookManager manager = new BookManager();
 		manager.addBook("Rashomon");
 		manager.addBook("Mistborn I");
 		manager.addBook("The death denial");
@@ -75,7 +76,6 @@ public class BookManagerTest {
 	}
 	@Test
 	public void listSortedAfterAdding() {
-		BookManager manager = new BookManager();
 		manager.addBook("Rashomon");
 		manager.addBook("Mistborn I");
 		manager.addBook("The death denial");
@@ -87,7 +87,6 @@ public class BookManagerTest {
 	}
 	@Test
 	public void listSortedAfterDeleting() {
-		BookManager manager = new BookManager();
 		manager.addBook("Rashomon");
 		manager.addBook("Mistborn I");
 		manager.addBook("The death denial");
